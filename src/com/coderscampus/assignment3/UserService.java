@@ -31,10 +31,12 @@ public class UserService {
 
 		finally {
 		}
+		
 		return users;
 	}
 
 	public User createUser(String username, String password, String name) {
+		
 		User user = new User();
 		user.setUsername(username);
 		user.setPassword(password);
@@ -44,12 +46,14 @@ public class UserService {
 	}
 
 	public User validateUser(User[] users, String username, String password) {
+		
 		for (User user : users) {
 			if (user.getUsername().equalsIgnoreCase(username) && user.getPassword().equals(password)) {
 
 				return user;
 			}
 		}
+		
 		return null;
 
 	}
